@@ -34,6 +34,7 @@ const isAuth = async (req, res, next) => {
     }
 
     const decoded = jwt.verify(token, process.env.JWT_SECRET);
+    console.log("decoded user is", decoded);
     req.userId = decoded.userId || decoded.id || decoded._id;
     
     if (!req.userId) {
@@ -51,7 +52,7 @@ const isAuth = async (req, res, next) => {
         message: "Not authorized, user not found",
       });
     }
-
+    console.log("user is",user);
     req.user = user;
     
     next();

@@ -52,8 +52,10 @@ const bookingRoutes = require('./routes/booking.route.js')
 // Also use cors package as backup
 
 app.use(cors({
-  origin: process.env.CLIENT_URL || 'http://localhost:5173',
-  credentials: true
+  origin:"https://movieminutes.vercel.app",
+  credentials: true,
+  methods: ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
+  allowedHeaders: ["Content-Type", "Authorization"]
 }));
 
 app.use(cookieParser())

@@ -10,7 +10,7 @@ const userRouter = express.Router(); // Route
 
 userRouter.post("/register", async (req, res) => {
   // Set CORS headers
-  res.setHeader('Access-Control-Allow-Origin', 'http://localhost:5173');
+  res.setHeader('Access-Control-Allow-Origin', 'https://movieminutes.vercel.app');
   res.setHeader('Access-Control-Allow-Credentials', 'true');
   
   try {
